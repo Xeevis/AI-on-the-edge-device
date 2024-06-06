@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  app:
+    build: ./
+    env_file: devcontainer.env
+    volumes:
+      - ..:/workspace:cached
+      - /workspace/.pio
+      - /workspace/.vscode
+    command: sleep infinity
+    privileged: true

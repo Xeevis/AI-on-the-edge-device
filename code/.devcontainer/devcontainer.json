@@ -1,0 +1,19 @@
+{
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "platformio.platformio-ide"
+            ]
+        }
+    },
+    "dockerComposeFile": "./docker-compose.yml",
+    "initializeCommand": "usbipd wsl attach --hardware-id 1a86:7523 --distribution Ubuntu || ver>nul",
+    "mounts": [
+        "source=/dev,target=/dev,type=bind,consistency=consistent"
+    ],
+    "name": "AI-on-the-edge-device",
+    "postCreateCommand": "sudo chown vscode .pio && sudo chown vscode .vscode",
+    "remoteUser": "vscode",
+    "service": "app",
+    "workspaceFolder": "/workspace"
+}
